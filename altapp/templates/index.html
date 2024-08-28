@@ -1,0 +1,38 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltBot</title>
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<div class="chat-container" id="chat-container" style="display: none;">
+    <div id="archived-chats-container" class="conversation-container">
+        <div class="conversation-header">New Chat</div>
+    </div>
+ <div id="chat-box-one" class="chat-box-one">
+    <div id="chat-box" class="chat-box"><!-- Messages will be displayed here -->
+    </div>
+<p id="selected-image-info"> </p>
+
+    <div class="form-group">
+
+            <input type="file" id="image-input" accept="image/*" onchange="previewImage(event)">
+        <label for="image-input" class="file-input-label"><i class="fas fa-paperclip"></i></label>
+        <input type="text" id="user-input" placeholder="Type your question here..." />
+        <button onclick="sendMessage()" type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+    
+</div>
+
+    <button id="toggle-button" onclick="toggleChat()" style="position: fixed; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Toggle Chat</button>
+    <!-- <script src="{% static 'js/scripting.js' %}"></script> -->
+</body>
+</html>
