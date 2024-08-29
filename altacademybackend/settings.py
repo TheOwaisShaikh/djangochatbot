@@ -24,8 +24,8 @@ SECRET_KEY = 'django-insecure-5_)dh@3o+*!rr=jyxoir7a^is#87rvpz-9vv#y#*9lxuhjvbwo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['chat.altacademy.org', '127.0.0.1', 'localhost']
 
-ALLOWED_HOSTS = ['chat.altacademy.org,']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
