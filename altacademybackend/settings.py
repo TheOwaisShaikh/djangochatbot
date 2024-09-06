@@ -11,10 +11,19 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
+# Now you can access the variables from the .env file using os.getenv
+DATABASE_NAME = os.getenv('DATABASE_NAME')
+COMPUTER_VISION_KEY = os.getenv('COMPUTER_VISION_SUBSCRIPTION_KEY')
+COMPUTER_VISION_ENDPOINT = os.getenv('COMPUTER_VISION_ENDPOINT')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# Quick-start development settings - unsuitable for pro
+
+# Quick-start development settings - unsuitable for pro
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -23,8 +32,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5_)dh@3o+*!rr=jyxoir7a^is#87rvpz-9vv#y#*9lxuhjvbwo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['chat.altacademy.org', '127.0.0.1', 'localhost']
+DEBUG = False
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
+    'localhost',
+    'chat.altacademy.org',  # Your actual domain
+    'circle.altback.org',
+    'gtcimports.com',
+    '5646-103-86-55-135.ngrok-free.app',
+    'edx-copy-62e07e5e2edf3a73-d88d7b75829d3.webflow.io',
+    'api.chat.altacademy.org', 
+    'altacademy.org', 
+    'chat.altacademy.org',
+]
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -43,7 +64,10 @@ INSTALLED_APPS = [
 CORS_ALLOWED_ORIGINS = [
     "https://circle.altback.org",
     "https://gtcimports.com",
-    'https://chat.altback.org',
+    'https://chat.altacademy.org',
+    "https://api.chat.altacademy.org",
+    'https://chat.altacademy.org',
+    "https://altacademy.org",
     "https://5646-103-86-55-135.ngrok-free.app",
     "https://edx-copy-62e07e5e2edf3a73-d88d7b75829d3.webflow.io",
     'https://edx-copy-62e07e5e2edf3a73-d88d7b75829d3.webflow.io',
@@ -51,10 +75,14 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://5646-103-86-55-135.ngrok-free.app',
+    "https://api.chat.altacademy.org",
+    'https://chat.altacademy.org',
     'https://chat.altback.org',
+    "https://altacademy.org",
     'https://edx-copy-62e07e5e2edf3a73-d88d7b75829d3.webflow.io',
     'https://edx-copy-62e07e5e2edf3a73-d88d7b75829d3.webflow.io/courses',
     "https://gtcimports.com",
+
 ]
 
 
